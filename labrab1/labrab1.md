@@ -38,16 +38,16 @@
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/devenv_rGwtvUpuJo.png?raw=true) 
 <center>Рисунок 1</center>
-<br/> После нужно было выбрать пункт "Консольное приложение" и нажать "Далее". Это показано на рисунке 2.
+<br/><br/> После нужно было выбрать пункт "Консольное приложение" и нажать "Далее". Это показано на рисунке 2.
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/devenv_Xnq1j0CpIp.png?raw=true)
 <center>Рисунок 2</center>
-<br/>Далее нужно было выбрать имя проекта и его расположение. Это показано на рисунке 3.
+<br/><br/> Далее нужно было выбрать имя проекта и его расположение. Это показано на рисунке 3.
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/devenv_ogsAUGtlne.png?raw=true)
 <center>Рисунок 3</center>
-<br/>На данном этапе создание консольного приложения закончено. Консольное приложение показано на рисунке 4.
+<br/><br/> На данном этапе создание консольного приложения закончено. Консольное приложение показано на рисунке 4.
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/devenv_WeGJ8slgYU.png?raw=true)
 <center>Рисунок 4</center>
-<br/>
+<br/><br/>
