@@ -37,7 +37,7 @@
 Для того чтобы создать консольное приложение C++ нужно зайти в Visual Studio и нажать на вкладку "Создание проекта". Это показано на рисунке 1.
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/devenv_rGwtvUpuJo.png?raw=true) 
-<center>Рисунок 1</center>
+                                          <center>Рисунок 1</center>
 <br> После нужно было выбрать пункт "Консольное приложение" и нажать "Далее". Это показано на рисунке 2.
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/devenv_Xnq1j0CpIp.png?raw=true)
