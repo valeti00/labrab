@@ -72,7 +72,6 @@
 
 Есть 2 вида комментариев "Однострочный" и "Многострочный". Чтобы закомментировать одну строку испольщуется "//". Но если нам понадобиться заккоментировать определенную область кода, то мы используем "Многострочный" комментарий "/*....*/" - начало и конец комментария. Это показано на рисунке 8.
 
-
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/devenv_Wi6l0vnhGt.png?raw=true)
 <center>Рис. 8. Закомментированный блок кода</center>
 <br/><br/>
@@ -80,7 +79,6 @@
 4. Как открыть в проводнике Windows папку с проектом средствами VS.
 
 Для того чтобы открыть в проводнике Windows папку с проектом нужно во вкладке "Файл" выбрать пункт "Открыть" и выбрать "Папка...", или использовать комбинацию клавиш "Ctrl+Shift+Alt+O", после нужно будет найти нашу папку. Это показано на рисунке 9.
-
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/devenv_aPOeerHrV3.png?raw=true)
 <center>Рис. 9. Открытие папки с проектом</center>
@@ -94,7 +92,6 @@
 
 Чтобы запустить код без отладки можно зайти во вкладку "Отладка" и выбрать пункт "Запуск без отладки". Также можно воспользоваться комбинацией клавиш "Ctrl+F5". Это показано на рисунке 10.
 
-
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/SVmmveAGKm.png?raw=true)
 <center>Рис. 10. Запуск без отладки</center>
 <br/><br/>
@@ -102,7 +99,6 @@
 7. Как запустить код в режиме отладки.
 
 Для того чтобы запустить код в режиме отладки можно зайти во вкладку "Отладка" и выбрать пункт "Начать отладку". Также можно воспользоваться клавишей "F5". Это показано на рисунке 11.
-
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/BHFOekMcbS.png?raw=true)
 <center>Рис. 11. Запуск в режиме отладки</center>
@@ -112,13 +108,11 @@
 
 Чтобы задать точку останова в коде, щелкнем в крайнем левом поле рядом со строкой кода. Можно также выбрать линию и нажать клавишу F9, выбрать Отладка > Переключить точку остановаили щелкнуть правой кнопкой мыши и выбрать точку останова > Вставить точку останова. Точка останова отображается в виде красной точки в левом поле. Ее также можно убрать нажав клавишу F9. Это показано на рисунке 12.
 
-
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/devenv_tb6oGE0Aih.png?raw=true)
 <center>Рис. 12. Точка останова</center>
 <br/><br/>
 
 9. Создайте программу со следующим кодом:
-
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/devenv_CRTOMuc6Uo.png?raw=true)
 <center>Рис. 13. Код программы</center>
@@ -132,21 +126,17 @@
 
 Для того чтобы переключить конфигурациб сборки нужно в панели "Конфигурации решения" поменять сборку на Debug. Это показано на рисунке 14.
 
-
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/85CVKTYmXF.png?raw=true)
 <center>Рис. 14. Сбока Debug</center>
 <br/><br/>После устанавливаем breakpoint на 5 и 6 строках. Это показано на рисунке 15.
-
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/devenv_ubui6L0QHc.png?raw=true)
 <center>Рис. 15. Breakpoint</center>
 <br/><br/>Далее запускаем приложение в режиме отладки и выбираем пункт "Шаг с обходом". Это показано на рисунке 16.
 
-
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/qtu9IFh2Yp.png?raw=true)
 <center>Рис. 16. Шаг с обходом</center>
 <br/><br/>Значения переменной i в 5 и 6 строках показаны на рисунке 17.
-
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/ApplicationFrameHost_FkY4l0uKeL.jpg?raw=true)
 <center>Рис. 17. Переменная i</center>
@@ -154,11 +144,9 @@
 
 10. Выполните задание 9 изменив программу на следующую:
 
-
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/devenv_mBQkYw7x7L.png?raw=true)
 <center>Рис. 18. Код программы</center>
 <br/><br/>Значения переменной i в 5 и 6 строках показаны на рисунке 19.
-
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/ApplicationFrameHost_U0IcAXWIH7.jpg?raw=true)
 <center>Рис. 19. Переменная i</center>
