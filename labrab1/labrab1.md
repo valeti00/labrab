@@ -38,7 +38,7 @@
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/devenv_rGwtvUpuJo.png?raw=true) 
 <center>Рис. 1. Создание проекта</center>
-<br/><br/> После нужно было выбрать пункт "Консольное приложение" и нажать "Далее". Это показано на рисунке 2.
+<br/><br/> После нужно было выбрать пункт "Консольное приложение" и нажать "Далее". Это показано на рисунке 2.<br/>
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/devenv_Xnq1j0CpIp.png?raw=true)
 <center>Рис. 2. Консольное приложение</center>
