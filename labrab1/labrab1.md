@@ -58,11 +58,11 @@
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/E3F8gUmRUZ.png?raw=true)
 <center>Рис. 5. Параметры</center>
-<br/><br/>После в параметрах "Визуальное представление" нужно было поменять цветовую тему. Это показно на рисунке 6.<br/>
+<br/><br/>После в параметрах "Визуальное представление" нужно было поменять цветовую тему. Это показно на рисунке 6.<br/><br/>
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/devenv_8q04PgeyRT.png?raw=true)
 <center>Рис. 6. Визуальное представление</center>
-<br/><br/>Измененная цветовая схема показана на рисунке 7.<br/>
+<br/><br/>Измененная цветовая схема показана на рисунке 7.<br/><br/>
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/devenv_rVtmjYgF8p.png?raw=true)
 <center>Рис. 7. Цветовая схема</center>
