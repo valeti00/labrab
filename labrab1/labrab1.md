@@ -42,11 +42,11 @@
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/devenv_Xnq1j0CpIp.png?raw=true)
 <center>Рис. 2. Консольное приложение</center>
-<br/><br/> Далее нужно было выбрать имя проекта и его расположение. Это показано на рисунке 3.
+<br/><br/> Далее нужно было выбрать имя проекта и его расположение. Это показано на рисунке 3.<br/><br/>
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/devenv_ogsAUGtlne.png?raw=true)
 <center>Рис. 3. Имя и расположение проекта</center>
-<br/><br/> На данном этапе создание консольного приложения закончено. Консольное приложение показано на рисунке 4.
+<br/><br/> На данном этапе создание консольного приложения закончено. Консольное приложение показано на рисунке 4.<br/><br/>
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/devenv_WeGJ8slgYU.png?raw=true)
 <center>Рис. 4. Консольное приложение</center>
@@ -58,11 +58,11 @@
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/E3F8gUmRUZ.png?raw=true)
 <center>Рис. 5. Параметры</center>
-<br/><br/>После в параметрах "Визуальное представление" нужно было поменять цветовую тему. Это показно на рисунке 6.
+<br/><br/>После в параметрах "Визуальное представление" нужно было поменять цветовую тему. Это показно на рисунке 6.<br/>
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/devenv_8q04PgeyRT.png?raw=true)
 <center>Рис. 6. Визуальное представление</center>
-<br/><br/>Измененная цветовая схема показана на рисунке 7.
+<br/><br/>Измененная цветовая схема показана на рисунке 7.<br/>
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/devenv_rVtmjYgF8p.png?raw=true)
 <center>Рис. 7. Цветовая схема</center>
