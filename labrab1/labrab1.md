@@ -151,4 +151,4 @@
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab1/ApplicationFrameHost_U0IcAXWIH7.jpg?raw=true)
 <center>Рис. 19. Переменная i</center>
-<br/><br/><br/>*Вывод:* Все цели и задачи лабораторной работы были выполнены в полном объеме. Были получены навыки в работе с Visual Studio на языке C++ и с языком разметки Markdown.
+<br/><br/><br/> *Вывод:* Все цели и задачи лабораторной работы были выполнены в полном объеме. Были получены навыки в работе с Visual Studio на языке C++ и с языком разметки Markdown.
