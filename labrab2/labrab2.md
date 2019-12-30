@@ -39,7 +39,7 @@
 Значения параметров a, b, начала и конца интервала хнач, xкон и шага dx вводятся пользователем.
 
 Код программы:
-c++
+
     #include <iostream>
     #include <conio.h>
 
@@ -74,13 +74,6 @@ c++
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab2/chrome_Xq9Dxxg7rj.png?raw=true) 
 <center>Рис. 1. Функция</center>
 <br/><br/>
-
-После нужно было протабулировать нашу функцию. Это показано на рисунке 2.
-
-![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab2/devenv_fvQx6IA1ry.png?raw=true) 
-<center>Рис. 2. Код функции</center>
-<br/><br/>
-
 
 При этом нужно было ввести такие значения: a = 0.7, b = 1.2, начала и конца интервала хнач = 0.5, xкон = 1.5 и шага dx = 0.05. Результаты показаны в Таблице 1.
 
