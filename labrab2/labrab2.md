@@ -58,12 +58,9 @@
 	cout << '\n' << ' ' << "  x " << '\t' << "F\n";
 	cout.precision(3);
 	double x = xнач;
-	if (x <= a)
-		for (x = xнач; x <= xкон+dx; x += dx) { F = double(((x * x)) + (sin(x))); cout << "\n  " << x << "  " << F; }
-	if (a < x < b)
-		for (x = xнач; x <= xкон+dx; x += dx) { F = double(cos((x * x))); cout << "\n  " << x << "  " << F; }
-	if (x >= b)
-		for (x = xнач; x <= xкон+dx; x += dx) { F = double(log2(x)); cout << "\n  " << x << "  " << F; }
+	for (x += dx; x <= xкон + dx; x += dx) { F = double(((x * x)) + (sin(x))); cout << "\n  " << x << "  " << F; if (a < x < b) break; }
+	for (x += dx; x <= xкон + dx; x += dx) { F = double(cos((x * x))); cout << "\n  " << x << "  " << F; if (x >= b) break; }
+	for (x += dx; x <= xкон + dx; x += dx) { F = float(log2(x)); cout << "\n  " << x << "  " << F; }
 
 	
 	_getch();
