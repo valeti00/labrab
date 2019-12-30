@@ -39,7 +39,7 @@
 Значения параметров a, b, начала и конца интервала хнач, xкон и шага dx вводятся пользователем.
 
 Код программы:
-'''c++
+c++
     #include <iostream>
     #include <conio.h>
 
@@ -68,7 +68,7 @@
 	
 	_getch();
 	}
-'''
+
 После нужно было использовать функцию своего варианта. Функция показана на рисунке 1.
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab2/chrome_Xq9Dxxg7rj.png?raw=true) 
