@@ -39,7 +39,7 @@
 Значения параметров a, b, начала и конца интервала хнач, xкон и шага dx вводятся пользователем.
 
 Код программы:
-
+'''c++
     #include <iostream>
     #include <conio.h>
 
@@ -68,7 +68,7 @@
 	
 	_getch();
 	}
-
+'''
 После нужно было использовать функцию своего варианта. Функция показана на рисунке 1.
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab2/chrome_Xq9Dxxg7rj.png?raw=true) 
@@ -88,7 +88,7 @@
 
 <table>
 <tr><td>X<br/>0.5<br/>0.55<br/>0.6<br/>0.65<br/>0.7<br/>0.75<br/>0.8<br/>0.85<br/>0.9<br/>0.95<br/>1<br/>1.05<br/>1.1<br/>1.15<br/>1.2<br/>1.25<br/>1.3<br/>1.35<br/>1.4<br/>1.45<br/>1.5</td>
-<td>F<br/>0.729<br/>0.825<br/>0.925<br/>1.03<br/>1.13<br/>0.846<br/>0.802<br/>0.75<br/>0.689<br/>0.62<br/>0.54<br/>0.451<br/>0.353<br/>0.246<br/>0.13<br/>0.322<br/>0.379<br/>0.433<br/>0.485<br/>0.536<br/>0.585<br/>
+<td>F<br/>0.729<br/>0.825<br/>0.925<br/>1.03<br/>1.13<br/>0.846<br/>0.802<br/>0.75<br/>0.689<br/>0.62<br/>0.54<br/>0.451<br/>0.353<br/>0.246<br/>0.263<br/>0.322<br/>0.379<br/>0.433<br/>0.485<br/>0.536<br/>0.585<br/>
 </tr>
 </table>
 <br/><br/>
@@ -105,8 +105,8 @@
 
 График функции со всеми точками показан на рисунке 3.
 
-![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab2/chrome_f2FfHJCQE7.png?raw=true) 
-<center>Рис. 2. Код функции</center>
+![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab2/chrome_LmoyV69YxO.png?raw=true) 
+<center>Рис. 3. Графики</center>
 <br/><br/>
 
 **Вывод:** Все цели и задачи лабораторной работы были выполнены в полном объеме. Были получены навыки в работе с Visual Studio на языке C++ и с языком разметки Markdown, а также работе с сервисом Desmos.
