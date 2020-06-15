@@ -44,7 +44,7 @@
 <br/><br/>
 
 Код: 
-
+```cpp
     #include <iostream>
     #include<string>
     #include "libbmp.h"
@@ -91,6 +91,7 @@
 	    }
 	    return 0;
     }
+```
 
 Результатом декодирования является данный текст:
 
