@@ -43,8 +43,6 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 #include <lockcontroller.h>
-#include <ILatch.h>
-#include <IKeypad.h>
 
 using namespace testing;
 
