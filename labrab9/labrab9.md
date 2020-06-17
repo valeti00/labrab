@@ -46,21 +46,21 @@
 
 using namespace testing;
 
-class MockILatch: public ILatch{
+
+class MockILatch : public ILatch {
 public:
-    MOCK_METHOD(bool, isActive, (), (override));
-    MOCK_METHOD(DoorStatus, open,(),(override));
-    MOCK_METHOD(DoorStatus, close,(), (override));
-    MOCK_METHOD(DoorStatus, getDoorStatus,(),(override));
+    MOCK_METHOD(bool, isActive, ());
+    MOCK_METHOD(DoorStatus, open, ());
+    MOCK_METHOD(DoorStatus, close, ());
+    MOCK_METHOD(DoorStatus, getDoorStatus, ());
 };
 
-class MockIKeypad: public IKeypad{
+class MockIKeypad : public IKeypad {
 public:
-   MOCK_METHOD (bool, isActive,(),(override));
-   MOCK_METHOD (void, wait,(),(override));
-   MOCK_METHOD (PasswordResponse, requestPassword,(),(override));
+    MOCK_METHOD(bool, isActive, ());
+    MOCK_METHOD(void, wait, ());
+    MOCK_METHOD(PasswordResponse, requestPassword, ());
 };
-
 
 TEST(Lab9, test1){
 
