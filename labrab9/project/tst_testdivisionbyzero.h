@@ -4,24 +4,23 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 #include <lockcontroller.h>
-#include <ILatch.h>
-#include <IKeypad.h>
+
 
 using namespace testing;
 
-class MockILatch: public ILatch{
+class MockIKeypad : public IKeypad {
 public:
-    MOCK_METHOD(bool, isActive, (), (override));
-    MOCK_METHOD(DoorStatus, open,(),(override));
-    MOCK_METHOD(DoorStatus, close,(), (override));
-    MOCK_METHOD(DoorStatus, getDoorStatus,(),(override));
+    MOCK_METHOD(bool, isActive, ());
+    MOCK_METHOD(void, wait, ());
+    MOCK_METHOD(PasswordResponse, requestPassword, ());
 };
 
-class MockIKeypad: public IKeypad{
+class MockILatch : public ILatch {
 public:
-   MOCK_METHOD (bool, isActive,(),(override));
-   MOCK_METHOD (void, wait,(),(override));
-   MOCK_METHOD (PasswordResponse, requestPassword,(),(override));
+    MOCK_METHOD(bool, isActive, ());
+    MOCK_METHOD(DoorStatus, open, ());
+    MOCK_METHOD(DoorStatus, close, ());
+    MOCK_METHOD(DoorStatus, getDoorStatus, ());
 };
 
 
@@ -40,8 +39,7 @@ TEST(Lab9, test2){
     MockIKeypad IKeypad;
     LockController Door(&IKeypad, &ILatch);
     EXPECT_CALL(ILatch, getDoorStatus()) .Times(1) .WillOnce (Return(DoorStatus::CLOSE));
-    bool Return=Door.isDoorOpen();
-    EXPECT_FALSE(Return);
+    EXPECT_FALSE(Door.isDoorOpen());
 }
 
 TEST(Lab9, test3){
@@ -49,8 +47,7 @@ TEST(Lab9, test3){
     MockIKeypad IKeypad;
     LockController Door(&IKeypad, &ILatch);
     EXPECT_CALL(ILatch, getDoorStatus()) .Times(1) .WillOnce (Return(DoorStatus::OPEN));
-    bool Return=Door.isDoorOpen();
-    EXPECT_TRUE(Return);
+    EXPECT_TRUE(Door.isDoorOpen());
 
 }
 
@@ -59,8 +56,7 @@ TEST(Lab9, test4){
     MockIKeypad IKeypad;
     LockController Door(&IKeypad, &ILatch);
     EXPECT_CALL(ILatch, open()) .Times(1);
-    DoorStatus Return= Door.unlockDoor();
-    EXPECT_EQ(Return,DoorStatus::OPEN);
+    EXPECT_EQ(Door.unlockDoor(),DoorStatus::OPEN);
 
 }
 
@@ -70,8 +66,7 @@ TEST(Lab9, test5){
    MockIKeypad IKeypad;
    LockController Door(&IKeypad, &ILatch);
    EXPECT_CALL(ILatch, close()) .Times(1) .WillOnce(Return(DoorStatus::CLOSE));
-   DoorStatus Return= Door.lockDoor();
-   EXPECT_EQ(Return,DoorStatus::CLOSE);
+   EXPECT_EQ(Door.lockDoor(),DoorStatus::CLOSE);
 
 }
 
@@ -81,8 +76,7 @@ TEST(Lab9, test6){
     LockController Door(&IKeypad, &ILatch);
     EXPECT_CALL(ILatch, isActive()) .Times(1) .WillOnce(Return(1));
     EXPECT_CALL(IKeypad, isActive()) .Times(1) .WillOnce(Return(1));
-    HardWareStatus Return=Door.hardWareCheck();
-    EXPECT_EQ(Return,HardWareStatus::OK);
+    EXPECT_EQ(Door.hardWareCheck(),HardWareStatus::OK);
 }
 
 TEST(Lab9, test7){
@@ -91,8 +85,7 @@ TEST(Lab9, test7){
     LockController Door(nullptr, &ILatch);
     EXPECT_CALL(ILatch, isActive()) .Times(AtLeast(0)) .WillOnce(Return(1));
     EXPECT_CALL(IKeypad, isActive()) .Times(AtLeast(0)) .WillOnce(Return(1));
-    HardWareStatus Return=Door.hardWareCheck();
-    EXPECT_EQ(Return,HardWareStatus::ERROR);
+    EXPECT_EQ(Door.hardWareCheck(),HardWareStatus::ERROR);
 
 }
 
@@ -102,8 +95,7 @@ TEST(Lab9, test8){
     LockController Door(&IKeypad, &ILatch);
     EXPECT_CALL(ILatch, isActive()) .Times(AtLeast(0)) .WillOnce(Return(0));
     EXPECT_CALL(IKeypad, isActive()) .Times(AtLeast(0)) .WillOnce(Return(1));
-    HardWareStatus Return=Door.hardWareCheck();
-    EXPECT_EQ(Return,HardWareStatus::ERROR);
+    EXPECT_EQ(Door.hardWareCheck(),HardWareStatus::ERROR);
 
 }
 
@@ -113,18 +105,16 @@ TEST(Lab9, test9){
     LockController Door(&IKeypad, &ILatch);
     PasswordResponse passResp{PasswordResponse::Status::OK,"0000"};
     EXPECT_CALL(IKeypad, requestPassword()) .Times(1) .WillOnce(Return(passResp));
-    bool Return=Door.isCorrectPassword();
-    EXPECT_TRUE(Return);
+    EXPECT_TRUE(Door.isCorrectPassword());
 }
 
 TEST(Lab9, test10){
     MockILatch ILatch;
     MockIKeypad IKeypad;
     LockController Door(&IKeypad, &ILatch);
-    PasswordResponse passResp{PasswordResponse::Status::OK,"0100"};
+    PasswordResponse passResp{PasswordResponse::Status::OK,"1111"};
     EXPECT_CALL(IKeypad, requestPassword()) .Times(1) .WillOnce(Return(passResp));
-    bool Return=Door.isCorrectPassword();
-    EXPECT_FALSE(Return);
+    EXPECT_FALSE(Door.isCorrectPassword());
 }
 
 
@@ -133,15 +123,14 @@ TEST(Lab9, test11){
     MockIKeypad IKeypad;
     LockController Door(&IKeypad, &ILatch);
     PasswordResponse oldPass{PasswordResponse::Status::OK,"0000"};
-    PasswordResponse newPass{PasswordResponse::Status::OK,"9876"};
+    PasswordResponse newPass{PasswordResponse::Status::OK,"1111"};
     EXPECT_CALL(IKeypad, requestPassword())
             .Times(2)
             .WillOnce(Return(oldPass))
             .WillOnce(Return(newPass));
             Door.resetPassword();
-     EXPECT_CALL(IKeypad, requestPassword()) .Times(1) .WillOnce(Return(newPass));
-     bool Return=Door.isCorrectPassword();
-      EXPECT_TRUE(Return);
+    EXPECT_CALL(IKeypad, requestPassword()) .Times(1) .WillOnce(Return(newPass));
+    EXPECT_TRUE(Door.isCorrectPassword());
 }
 
 
