@@ -204,6 +204,8 @@ TEST(Lab9, test12){
 <center>Рис. 2. Метод "lockDoor"</center>
 <br></br>
 
+Данная ошибка возникла из-за того что не было вызова метода "Close".
+
 3)В результате все тесты прошли успешно. Это показано на рисунке 3.
 
 ![Image of Yaktocat](https://github.com/valeti00/labrab/blob/master/labrab9/qtcreator_NsuugRsNrL.png?raw=true) 
