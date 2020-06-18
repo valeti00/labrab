@@ -190,3 +190,6 @@ return 0;
   
 ```
 
+<a href="https://github.com/valeti00/labrab/blob/master/labrab5/train.txt">Файл с результатами расчета</a>
+
+<br/>
