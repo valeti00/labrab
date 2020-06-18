@@ -48,11 +48,11 @@ struct passanger_data {
 	bool Survival;
 	int Pclass;
 	string Name;
-	string	Sex;
+	string Sex;
 	int Age;
-	int	SibSp;
-	int	Parsym;
-	int	Ticket;
+	int SibSp;
+	int Parsym;
+	int Ticket;
 	string Fare;
 	string Cabin;
 	string Embarked;
