@@ -49,17 +49,17 @@ using namespace testing;
 
 class MockIKeypad : public IKeypad {
 public:
-    MOCK_METHOD(bool, isActive, ());
-    MOCK_METHOD(void, wait, ());
-    MOCK_METHOD(PasswordResponse, requestPassword, ());
+    MOCK_METHOD(bool, isActive, (), (override));
+    MOCK_METHOD(void, wait, (), (override));
+    MOCK_METHOD(PasswordResponse, requestPassword, (), (override));
 };
 
 class MockILatch : public ILatch {
 public:
-    MOCK_METHOD(bool, isActive, ());
-    MOCK_METHOD(DoorStatus, open, ());
-    MOCK_METHOD(DoorStatus, close, ());
-    MOCK_METHOD(DoorStatus, getDoorStatus, ());
+    MOCK_METHOD(bool, isActive, (), (override));
+    MOCK_METHOD(DoorStatus, open, (), (override));
+    MOCK_METHOD(DoorStatus, close, (), (override));
+    MOCK_METHOD(DoorStatus, getDoorStatus, (), (override));
 };
 
 
@@ -78,7 +78,7 @@ TEST(Lab9, test2){
     MockIKeypad IKeypad;
     LockController Door(&IKeypad, &ILatch);
     EXPECT_CALL(ILatch, getDoorStatus()) .Times(1) .WillOnce (Return(DoorStatus::CLOSE));
-    EXPECT_FALSE(Door.isDoorOpen());
+    ASSERT_FALSE(Door.isDoorOpen());
 }
 
 TEST(Lab9, test3){
@@ -86,7 +86,7 @@ TEST(Lab9, test3){
     MockIKeypad IKeypad;
     LockController Door(&IKeypad, &ILatch);
     EXPECT_CALL(ILatch, getDoorStatus()) .Times(1) .WillOnce (Return(DoorStatus::OPEN));
-    EXPECT_TRUE(Door.isDoorOpen());
+    ASSERT_TRUE(Door.isDoorOpen());
 
 }
 
@@ -95,7 +95,7 @@ TEST(Lab9, test4){
     MockIKeypad IKeypad;
     LockController Door(&IKeypad, &ILatch);
     EXPECT_CALL(ILatch, open()) .Times(1);
-    EXPECT_EQ(Door.unlockDoor(),DoorStatus::OPEN);
+    ASSERT_EQ(Door.unlockDoor(),DoorStatus::OPEN);
 
 }
 
@@ -105,7 +105,7 @@ TEST(Lab9, test5){
    MockIKeypad IKeypad;
    LockController Door(&IKeypad, &ILatch);
    EXPECT_CALL(ILatch, close()) .Times(1) .WillOnce(Return(DoorStatus::CLOSE));
-   EXPECT_EQ(Door.lockDoor(),DoorStatus::CLOSE);
+   ASSERT_EQ(Door.lockDoor(),DoorStatus::CLOSE);
 
 }
 
@@ -115,7 +115,7 @@ TEST(Lab9, test6){
     LockController Door(&IKeypad, &ILatch);
     EXPECT_CALL(ILatch, isActive()) .Times(1) .WillOnce(Return(1));
     EXPECT_CALL(IKeypad, isActive()) .Times(1) .WillOnce(Return(1));
-    EXPECT_EQ(Door.hardWareCheck(),HardWareStatus::OK);
+    ASSERT_EQ(Door.hardWareCheck(),HardWareStatus::OK);
 }
 
 TEST(Lab9, test7){
@@ -124,7 +124,7 @@ TEST(Lab9, test7){
     LockController Door(nullptr, &ILatch);
     EXPECT_CALL(ILatch, isActive()) .Times(AtLeast(0)) .WillOnce(Return(1));
     EXPECT_CALL(IKeypad, isActive()) .Times(AtLeast(0)) .WillOnce(Return(1));
-    EXPECT_EQ(Door.hardWareCheck(),HardWareStatus::ERROR);
+    ASSERT_EQ(Door.hardWareCheck(),HardWareStatus::ERROR);
 
 }
 
@@ -134,7 +134,7 @@ TEST(Lab9, test8){
     LockController Door(&IKeypad, &ILatch);
     EXPECT_CALL(ILatch, isActive()) .Times(AtLeast(0)) .WillOnce(Return(0));
     EXPECT_CALL(IKeypad, isActive()) .Times(AtLeast(0)) .WillOnce(Return(1));
-    EXPECT_EQ(Door.hardWareCheck(),HardWareStatus::ERROR);
+    ASSERT_EQ(Door.hardWareCheck(),HardWareStatus::ERROR);
 
 }
 
@@ -142,18 +142,18 @@ TEST(Lab9, test9){
     MockILatch ILatch;
     MockIKeypad IKeypad;
     LockController Door(&IKeypad, &ILatch);
-    PasswordResponse passResp{PasswordResponse::Status::OK,"0000"};
-    EXPECT_CALL(IKeypad, requestPassword()) .Times(1) .WillOnce(Return(passResp));
-    EXPECT_TRUE(Door.isCorrectPassword());
+    PasswordResponse PR{PasswordResponse::Status::OK,"0000"};
+    EXPECT_CALL(IKeypad, requestPassword()) .Times(1) .WillOnce(Return(PR));
+    ASSERT_TRUE(Door.isCorrectPassword());
 }
 
 TEST(Lab9, test10){
     MockILatch ILatch;
     MockIKeypad IKeypad;
     LockController Door(&IKeypad, &ILatch);
-    PasswordResponse passResp{PasswordResponse::Status::OK,"1111"};
-    EXPECT_CALL(IKeypad, requestPassword()) .Times(1) .WillOnce(Return(passResp));
-    EXPECT_FALSE(Door.isCorrectPassword());
+    PasswordResponse PR{PasswordResponse::Status::OK,"1111"};
+    EXPECT_CALL(IKeypad, requestPassword()) .Times(1) .WillOnce(Return(PR));
+    ASSERT_FALSE(Door.isCorrectPassword());
 }
 
 
@@ -161,15 +161,15 @@ TEST(Lab9, test11){
     MockILatch ILatch;
     MockIKeypad IKeypad;
     LockController Door(&IKeypad, &ILatch);
-    PasswordResponse oldPass{PasswordResponse::Status::OK,"0000"};
-    PasswordResponse newPass{PasswordResponse::Status::OK,"1111"};
+    PasswordResponse Pass1{PasswordResponse::Status::OK,"0000"};
+    PasswordResponse Pass2{PasswordResponse::Status::OK,"9876"};
     EXPECT_CALL(IKeypad, requestPassword())
-            .Times(2)
-            .WillOnce(Return(oldPass))
-            .WillOnce(Return(newPass));
-            Door.resetPassword();
-    EXPECT_CALL(IKeypad, requestPassword()) .Times(1) .WillOnce(Return(newPass));
-    EXPECT_TRUE(Door.isCorrectPassword());
+            .Times(3)
+            .WillOnce(Return(Pass1))
+            .WillOnce(Return(Pass2))
+            .WillOnce(Return(Pass2));
+    Door.resetPassword();
+    ASSERT_TRUE(Door.isCorrectPassword());
 }
 
 
@@ -177,10 +177,15 @@ TEST(Lab9, test12){
     MockILatch ILatch;
     MockIKeypad IKeypad;
     LockController Door(&IKeypad, &ILatch);
-    EXPECT_CALL(IKeypad, requestPassword()).Times(Exactly(5))
-                .WillOnce(Return(PasswordResponse{PasswordResponse::Status::OK, "0000"}))
-                .WillOnce(Return(PasswordResponse{PasswordResponse::Status::OK, "1111"}))
-                .WillOnce(Return(PasswordResponse{PasswordResponse::Status::OK, "1111"}));
+    PasswordResponse Pass1{PasswordResponse::Status::OK,"0000"};
+    PasswordResponse Pass2{PasswordResponse::Status::OK,"9876"};
+    PasswordResponse Pass3{PasswordResponse::Status::OK,"1111"};
+    EXPECT_CALL(IKeypad, requestPassword()).Times(5)
+                .WillOnce(Return(Pass1))
+                .WillOnce(Return(Pass2))
+                .WillOnce(Return(Pass2))
+                .WillOnce(Return(Pass3))
+                .WillOnce(Return(Pass3));
     Door.resetPassword();
     Door.resetPassword();
     ASSERT_TRUE(Door.isCorrectPassword());
@@ -188,6 +193,7 @@ TEST(Lab9, test12){
 
 
 #endif // TST_TESTDIVISIONBYZERO_H
+
 
 
 ```
